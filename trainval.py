@@ -287,8 +287,8 @@ def main():
         val_loader = DataLoader(val_dataset, batch_size=args.val_batch_size,shuffle=False, pin_memory=False)
 
         if args.network=='segan' or args.network=='sagan' or args.network=='ssgan' or args.network=='fcn':
-            from SSGAN import SSGAN
-            net = SSGAN(args, X_data.shape[1],categories-1)
+            from SSGRN import SSGRN
+            net = SSGRN(args, X_data.shape[1],categories-1)
         else:
             raise NotImplementedError
 
