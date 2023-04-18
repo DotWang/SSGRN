@@ -87,7 +87,7 @@ def CalSpMean(sp, feature):
 class SAGRN(nn.Module):
     def __init__(self, args, in_channel):
 
-        super(SAGAN,self).__init__()
+        super(SAGRN,self).__init__()
 
         self.args = args
 
@@ -137,7 +137,7 @@ class SEGRN(nn.Module):
 
     def __init__(self, args, height, width):
 
-        super(SEGAN,self).__init__()
+        super(SEGRN,self).__init__()
 
         self.args = args
 
@@ -193,7 +193,7 @@ class SSGRN(nn.Module):
 
     def __init__(self, args, spec_band, num_classes, init_weights=True, in_channel=256):
 
-        super(SSGAN, self).__init__()
+        super(SSGRN, self).__init__()
 
         self.args=args
 
@@ -209,17 +209,17 @@ class SSGRN(nn.Module):
 
         pix_num = int(height * width)
 
-        if self.args.network == 'segan':
+        if self.args.network == 'segrn':
 
-            self.segan = SEGRN(args, height, width)
+            self.segrn = SEGRN(args, height, width)
 
             self.cls_se = nn.Sequential(
                 Conv3x3BNReLU(in_channel, in_channel // 2),
                 nn.Conv2d(in_channel // 2, num_classes, kernel_size=1, stride=1),
             )
-        elif self.args.network == 'sagan':
+        elif self.args.network == 'sagrn':
 
-            self.sagan = SAGRN(args,in_channel)
+            self.sagrn = SAGRN(args,in_channel)
 
             self.cls_sa = nn.Sequential(
                 Conv3x3BNReLU(in_channel, in_channel // 2),
@@ -230,10 +230,10 @@ class SSGRN(nn.Module):
                 nn.Conv2d(in_channel // 2, num_classes, kernel_size=1, stride=1),
             )
 
-        elif self.args.network == 'ssgan':
+        elif self.args.network == 'ssgrn':
 
-            self.segan = SEGRN(args,  height, width)
-            self.sagan = SAGRN(args,in_channel)
+            self.segrn = SEGRN(args,  height, width)
+            self.sagrn = SAGRN(args,in_channel)
 
             self.cls_se = nn.Sequential(
                 Conv3x3BNReLU(in_channel, in_channel // 2),
@@ -269,28 +269,28 @@ class SSGRN(nn.Module):
 
         batch, _, h, w = x.size()
 
-        if self.args.network=='segan':
+        if self.args.network=='segrn':
 
-            se = self.segan(x)
+            se = self.segrn(x)
 
             se = F.interpolate(self.cls_se(se), size=(H, W), mode='bilinear',align_corners=True)
 
             return [se]
 
-        elif self.args.network=='sagan':
+        elif self.args.network=='sagrn':
 
-            sa, aux = self.sagan(x)
+            sa, aux = self.sagrn(x)
 
             sa = F.interpolate(self.cls_sa(sa), size=(H, W), mode='bilinear',align_corners=True)
             aux = F.interpolate(self.cls_sa2(aux), size=(H, W), mode='bilinear',align_corners=True)
 
             return [sa,aux]
 
-        elif self.args.network=='ssgan':
+        elif self.args.network=='ssgrn':
 
-            se = self.segan(x)
+            se = self.segrn(x)
 
-            sa, aux = self.sagan(x)
+            sa, aux = self.sagrn(x)
 
             re = se + sa + x
 

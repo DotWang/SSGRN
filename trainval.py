@@ -41,7 +41,7 @@ def main():
                         help='dataset name')
     ## network setting
     parser.add_argument('--network', type=str, default='sgrhsi',
-                        choices=['segan','sagan','ssgan','fcn'],
+                        choices=['segrn','sagrn','ssgrn','fcn'],
                         help='network name')
     ## normalization setting
     parser.add_argument('--norm', type=str, default='std',
@@ -163,11 +163,11 @@ def main():
 
     y_map=All_data[:, -1].reshape(r,c)
 
-    if args.network == 'ssgan':
+    if args.network == 'ssgrn':
         print('Implementing Spectral-Spatial Graph Attention Network!')
-    elif args.network == 'segan':
+    elif args.network == 'segrn':
         print('Implementing Spectral Graph Attention Network!')
-    elif args.network == 'sagan':
+    elif args.network == 'sagrn':
         print('Implementing Spatial Graph Attention Network!')
     elif args.network == 'fcn':
         print('Implementing Fully Convolutional Network!')
@@ -286,7 +286,7 @@ def main():
 
         val_loader = DataLoader(val_dataset, batch_size=args.val_batch_size,shuffle=False, pin_memory=False)
 
-        if args.network=='segan' or args.network=='sagan' or args.network=='ssgan' or args.network=='fcn':
+        if args.network=='segrn' or args.network=='sagrn' or args.network=='ssgrn' or args.network=='fcn':
             from SSGRN import SSGRN
             net = SSGRN(args, X_data.shape[1],categories-1)
         else:
