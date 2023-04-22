@@ -15,9 +15,14 @@
 ```
 git clone https://github.com/DotWang/SSGRN.git
 ```
-3. Training, validation, testing and prediction with ***trainval.py*** :
+3. Prepare a suitable GCC version, then install the SSN
+```
+cd utils/src
+python setup.py install
+```
+4. Training, validation, testing and prediction with ***trainval.py*** :
 
-For example, if use SSGRN and for [Salinas Valley dataset](http://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes)
+For example, when implementing SSGRN on [Salinas Valley dataset](http://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes)
 
 ```
  CUDA_VISIBLE_DEVICES=0 python -u trainval.py \
@@ -30,7 +35,7 @@ For example, if use SSGRN and for [Salinas Valley dataset](http://www.ehu.eus/cc
     --val-batch-size 1 \
     --se_groups 256 --sa_groups 256
 ```
-Then the evalution accuracies, the trained models and the classification map are separately saved.
+Then the evaluated accuracies, the trained models and the classification maps are separately saved.
 
 When training on the Houston dataset, using the mode of `part` and setting the input_size
 
