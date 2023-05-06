@@ -49,12 +49,16 @@ When training on the Houston dataset, using the mode of `part` and setting the i
 If this repo is useful for your research, please cite our [paper](https://arxiv.org/abs/2106.13952).
 
 ```
-@article{wang2021ssgrn, 
-title={Spectral-Spatial Graph Reasoning Network for Hyperspectral Image Classification}, 
-author={Wang, Di and Du, Bo and Zhang, Liangpei}, 
-journal={arXiv preprint arXiv:2106.13952}, 
-year={2021} 
-}
+@ARTICLE{wang_2023_ssgrn,
+  author={Wang, Di and Du, Bo and Zhang, Liangpei},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={Spectral-Spatial Global Graph Reasoning for Hyperspectral Image Classification}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-14},
+  doi={10.1109/TNNLS.2023.3265560}}
+
 ```
 
 ## Thanks
