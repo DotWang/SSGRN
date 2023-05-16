@@ -102,7 +102,7 @@ class product():
         self.flag = flag
         self.All_data = All_data
     # product the training and testing pixel ID
-    def generation_num(self, labeled_data, rows_num,ratio):
+    def generation_num(self, labeled_data, rows_num):
 
         train_num = []
 
@@ -158,12 +158,12 @@ class product():
         trn_num = [x for j in train_num for x in j]  # merge
         #np.random.seed(2020)
         np.random.shuffle(trn_num)
-        val_num = trn_num[int(len(trn_num)*ratio):]
+        val_num = trn_num[int(len(trn_num)):]
         tes_num = list(set(rows_num) - set(trn_num))
         pre_num = list(set(range(0, self.All_data.shape[0])) - set(trn_num))
         #trn_num = list(set(trn_num) | set(tes_num)) # for lichao mou's paper
-        print('number of training sample', int(len(trn_num)*ratio))
-        return rows_num, trn_num[:int(len(trn_num)*ratio)], val_num, tes_num, pre_num
+        print('number of training sample', int(len(trn_num)))
+        return rows_num, trn_num[:int(len(trn_num))], val_num, tes_num, pre_num
 
 
     def production_label(self, num, y_map, split='Trn'):
