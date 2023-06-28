@@ -75,9 +75,9 @@ If this repo is useful for your research, please cite our [paper](https://arxiv.
  <br><em> &ensp; &ensp; Di Wang<sup>&#8727;</sup>, Bo Du, and Liangpei Zhang</em>
  
 [3] <strong> Neural Architecture Search for Hyperspectral Image Classification </strong> 
-<br> &ensp; &ensp; HKNAS: Classification of Hyperspectral Imagery Based on Hyper Kernel Neural Architecture Search, IEEE TNNLS, 2023 | Paper | [Github](https://github.com/DotWang/HKNAS)
+<br> &ensp; &ensp; HKNAS: Classification of Hyperspectral Imagery Based on Hyper Kernel Neural Architecture Search, IEEE TNNLS, 2023 | [Paper](https://ieeexplore.ieee.org/document/10159237) | [Github](https://github.com/DotWang/HKNAS)
  <br><em> &ensp; &ensp; Di Wang<sup>&#8727;</sup>, Bo Du, Liangpei Zhang, and Dacheng Tao</em>
 
 [4] <strong> ImageNet Pretraining and Transformer based Hyperspectral Image Classification </strong> 
-<br> &ensp; &ensp; DCN-T: Dual Context Network with Transformer for Hyperspectral Image Classification, IEEE TIP, 2023 | [Paper](https://arxiv.org/abs/2304.09915) | [Github](https://github.com/DotWang/DCN-T)
+<br> &ensp; &ensp; DCN-T: Dual Context Network with Transformer for Hyperspectral Image Classification, IEEE TIP, 2023 | [Paper](https://ieeexplore.ieee.org/document/10112639) | [Github](https://github.com/DotWang/DCN-T)
  <br><em> &ensp; &ensp; Di Wang<sup>&#8727;</sup>, Jing Zhang, Bo Du, Liangpei Zhang, and Dacheng Tao</em>
