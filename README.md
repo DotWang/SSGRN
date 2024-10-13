@@ -2,7 +2,7 @@
 
 ### Di Wang, Bo Du, and Liangpei Zhang
 
-### Pytorch implementation of our [paper](https://arxiv.org/pdf/2106.13952.pdf) for graph convolution based hyperspectral image classification.
+### Pytorch implementation of our [paper](https://ieeexplore.ieee.org/document/10114988) for graph convolution based hyperspectral image classification.
 
 <figure>
 <img src=model.png>
@@ -49,16 +49,16 @@ When training on the Houston dataset, using the mode of `part` and setting the i
 If this repo is useful for your research, please cite our [paper](https://arxiv.org/abs/2106.13952).
 
 ```
-@ARTICLE{wang_2023_ssgrn,
+@ARTICLE{ssgrn,
   author={Wang, Di and Du, Bo and Zhang, Liangpei},
   journal={IEEE Transactions on Neural Networks and Learning Systems}, 
   title={Spectral-Spatial Global Graph Reasoning for Hyperspectral Image Classification}, 
-  year={2023},
-  volume={},
-  number={},
-  pages={1-14},
+  year={2024},
+  volume={35},
+  number={9},
+  pages={12924-12937},
+  keywords={Feature extraction;Cognition;Convolutional neural networks;Learning systems;Hyperspectral imaging;Training;Image classification;Adaptively;global perception;graph convolution;hyperspectral image classification (HSIC);spectral-spatial},
   doi={10.1109/TNNLS.2023.3265560}}
-
 ```
 
 ## Thanks
